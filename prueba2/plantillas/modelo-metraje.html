@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modelo metraje</title>
+    {% include 'bootstrapcss.html' %}
+    <link rel="stylesheet" href="/static/css/modelo-metraje.css">
+</head>
+<body>
+    <header>
+        {% include 'Navbar.html' %}
+    </header>
+    <section>
+     <div class="calculo-metraje" >
+         <div class="info">
+             <h3>El valor por metro cuadrado es de :  </h3>
+             <h5 id="precio-inicial">$ 33000</h5>
+         </div>
+         <div class="calculo">
+            <h5>Indique la cantidad de metros cuadrados</h5>
+            <input type="number" id="mts" onkeypress="return validarNumeros(event)">
+            <small id="emailHelp" class="form-text text-muted">Recuerde que el ingreso minimo son del 20 metros cuadrados.</small>
+            <button id="calcular">Calcular</button>
+            <p id="error"></p>
+            </div>
+         <div class="resultado">
+             <h4>Total:$<p class="precio-final" id="precio-final"></p> </h4>
+         </div>
+     </div>
+     
+     <!--JS-->
+     {% include 'bootstrapjs.html' %}
+     <script>
+
+        
+        var botonCalculo = document.getElementById('calcular');
+
+        function CalculoMetroCuadrado(m2){
+            let valorMetro = 33000;
+            let resultado = m2 * valorMetro;
+            return resultado;
+        }
+
+        botonCalculo.addEventListener('click',()=>{
+            let metros = document.getElementById('mts').value;
+            let mensaje = document.getElementById('precio-final');
+            let error = document.getElementById('error');
+            
+            //validar
+            if(metros.length == 0 ){
+                error.innerHTML = "Ingrese algun monto!";
+            }else if(metros<20){
+                error.innerHTML = "Debe ingresar una cantidad de metros cuadrados superior o igual a 20 ";
+            }else{
+                mensaje.innerHTML = CalculoMetroCuadrado(metros);
+            }
+
+        //validar ingreso de numeros en el campo
+   
+            
+        });
+
+     </script>
+    </section>
+</body>
+</html>

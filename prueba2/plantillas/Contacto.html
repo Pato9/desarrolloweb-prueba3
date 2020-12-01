@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    {% include 'bootstrapcss.html' %}
+    <link rel="stylesheet" href="../static/css/Contacto.css">
+</head>
+<body>
+    {% include 'Navbar.html' %}
+    <section>
+        <div class="formulario">
+            <div class="titulo">
+                <h1>Ingresa tus datos</h1>
+            </div>
+            <div class="datos">
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre </label>
+                        <input type="text" id="Nombre"  class="form-control" placeholder="Ingresa tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo</label>
+                        <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input type="text" class="form-control" id="telefono" placeholder="Ingresa tu telefono">
+                    </div>
+                    <div class="form-group">
+                        <select name="conocimiento" class="form-control" id="conocimiento"></select>
+                    </div>
+                    <div class="form-group">
+                        <select name="modelos" class="form-control" id="modelos"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Dejanos tu mensaje</label><br>
+                        <textarea name="mensaje" class="form-control" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" value="" id="enviar">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div align="center" class="informacion">
+            <div class="titulo">
+                <h1>Nos encontramos en:</h1>
+                <!--Agregar redes sociales, numeros, telefonos-->
+            </div>
+        </div>       
+        <div class="row">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.0991836115436!2d-70.63246734869021!3d-33.524806808624945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662da86f4bdc797%3A0x8348ef7a2a4e136!2sSta%20Ana%20308%2C%20La%20Granja%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1605024801102!5m2!1ses!2scl" width="1880" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>      
+    </section>
+    <!--JS BOOTSTRAP-->
+    {% include 'bootstrapjs.html' %}
+    <script>
+        //Cargar combo box para saber como llego a la plagina
+        function ComoNosConocio(){
+            let opcionesArray = ["Google","Redes Sociales(facebook, instagram, Twitter)","Via Publica", "Otra opcion"];
+            let conocimiento = document.getElementById("conocimiento");
+
+            for (let i = 0; i < opcionesArray.length; i++) {
+                //falta agregar valor a casda opcion
+                conocimiento.innerHTML += "<option>" + opcionesArray[i] + "</option>"
+                
+            }
+
+        }
+
+        function CargarModelos(){
+            let modelosArray = ["casa1","casa2","casa3","casa4","casa5","casa6"];
+            let modelos = document.getElementById("modelos");
+
+            for (let i = 0; i < modelosArray.length; i++) {
+                //faltan agregar el valor a cada opcion
+                modelos.innerHTML += "<option>" + modelosArray[i] + "</option>";
+                
+            }
+        }
+        CargarModelos();
+        ComoNosConocio();
+
+        //mensaje de envio
+        let boton = document.getElementById('enviar');
+        boton.addEventListener("click", function(){
+            alert("Hemos recivido tu consulta!");
+        });
+
+    </script>
+</body>
+</html>

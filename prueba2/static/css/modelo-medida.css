@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.calculo-medida {
+  border: 1.5px solid #b6b6b6;
+  border-radius: 5px;
+  width: 70%;
+  margin: 150px auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.calculo-medida .info {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1.5px solid #b6b6b6;
+}
+
+.calculo-medida .calculo {
+  margin: 0 auto;
+  border-bottom: 1.5px solid #b6b6b6;
+  padding: 5rem 6rem;
+}
+
+.calculo-medida .calculo section {
+  height: 100px;
+}
+
+.calculo-medida .calculo button {
+  background: cornflowerblue;
+  color: white;
+  width: 50%;
+  border: 1px solid white;
+  padding: 10px 35px;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+}
+
+.calculo-medida .calculo button:hover {
+  background: white;
+  color: cornflowerblue;
+  -webkit-transition: .5s;
+  transition: .5s;
+  border: 1px solid cornflowerblue;
+}
+
+.calculo-medida .resultado {
+  width: 100%;
+  padding: 1.5em;
+  height: auto;
+}
+
+.calculo-medida .resultado p {
+  font-weight: bold;
+  float: right;
+  font-size: 30px;
+}
+
+@media (max-width: 1024px) {
+  .calculo-medida {
+    width: 100%;
+    margin: 50px auto;
+  }
+  .calculo-medida .info {
+    width: 100%;
+    display: block;
+  }
+  .calculo-medida .calculo {
+    padding: 1em;
+  }
+  .calculo-medida button {
+    width: 100%;
+    display: block;
+  }
+}
+/*# sourceMappingURL=modelo-medida.css.map */

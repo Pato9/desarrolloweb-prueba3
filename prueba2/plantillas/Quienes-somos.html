@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% include 'bootstrapcss.html' %}
+    <link rel="stylesheet" href="../static/css/quienes-somos.css">
+</head>
+<body>
+    {% include 'Navbar.html' %}
+
+    <section>
+        <div class="presentacion">
+            <div class="logo">
+                <!--Se debe agregar una foto representativa de la empresa-->
+            </div>
+            <div class="info-presentacion">
+                <div class="titulo">
+                    <h1>Quienes somos?</h1>
+                </div>
+                <div class="texto">
+                   <p>Qui&eacute;nes Somos?
+                    Nos presentamos como una alternativa de construcci&oacute;n no solo m&aacute;s ec&oacute;nomica sino m&aacute;s r&aacute;pida y eficiente comparada con la vivienda tradicional.
+                    Somos una empresa dedicada a innovar con los mejores precios y la mejor calidad en todas sus construcciones, elaboradas con placas de concreto puro de cuatro cent&iacute;metros de grosor y el mejor calibre de las maderas, formando una estructura sismo resistente. 
+                    </p>
+                    <br>
+                    <p>Con el paso de los a&ntilde;os, sabemos el sacrificio que implica comprar una vivienda. Sabemos que es probablemente la inversi&oacute;n m&aacute;s importante. Es una &oacute;n en la que no se puede equivocar. A qui&eacute;n le compran una casa prefabricada, no da lo mismo. Es por esto que damos una atenci&oacute;n personalizada en cada proceso hasta la entrega de su casa prefabricada y entendemos que tener clientes satisfechos hoy es la mejor apuesta para el ma&ntilde;ana. Por eso nos hemos comprometido a tener los mejores est&aacute;ndares de calidad de servicio y un sistema de post-venta de excelencia en la comercializaci&oacute;n de casas prefabricadas de &oacute;n.</p>
+                </div>
+                <div class="portafilio">
+                    <button id="portafolio-btn" class="btn btn-primary">Portafolio</button>
+                </div>
+            </div>
+        </div>
+        <div class="ilustracion">
+            <img src="..\static\imagenes\quienes_somos.png" alt="">
+        </div>
+    </section>
+    <!--Script bootstrap-->
+    {% include 'bootstrapjs.html' %}
+</body>
+</html>

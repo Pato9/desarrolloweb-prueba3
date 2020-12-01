@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    {% include 'bootstrapcss.html' %}
+    <link rel="stylesheet" href="/static/css/modelo-medida.css">
+   
+</head>
+<body>
+   <header>
+       {% include 'Navbar.html' %}
+   </header>
+   <section>
+    <div class="calculo-medida" >
+        <div class="info">
+            <h3>El valor inicial es de : </h3>
+            <h5 id="precio-inicial">$</h5>
+        </div>
+        <div class="calculo">
+            <h5>Seleccione la cantidad de piezas</h5>
+            <select class="form-control" name="piezas" id="piezas">
+                <option value="0">Seleccione piezas...</option>
+            </select>
+            <br>
+            <h5>Seleccione la cantidad de ba&ntilde;os</h5>
+            <select class="form-control" name="banhios" id="banho">
+                <option value="0">Seleccione ba&ntilde;os...</option>
+            </select>
+            <br>
+            <button id="calcular">Calcular</button>
+            <p id="error"></p>
+        </div>
+        <div class="resultado">
+            <h4>Total: </h4>
+            <span>$</span><p class="precio-final" id="precio-final" ></p>
+        </div>
+    </div>
+
+   </section>
+
+   <!--JS-->
+   {% include 'bootstrapjs.html' %}
+   <script>
+    //cargar combobox piezas
+    function cargaPieza(){
+        
+        let piezaArray = ["1","2","3","4"];
+        let comboPieza = document.getElementById('piezas');
+
+        for ( i = 0; i < piezaArray.length; i++) {
+            comboPieza.innerHTML += "<option value='"+ piezaArray[i]+"'>" + piezaArray[i] + "</option>";    
+            
+        }
+    }
+
+    //cargar combobox baños
+    function cargaBanho(){
+
+        let banhoArray = ["1","2"];
+        let comboBanho = document.getElementById('banho');
+
+        for(i = 0; i < banhoArray.length; i++ ){
+            comboBanho.innerHTML += "<option value='"+banhoArray[i]+"'> " + banhoArray[i] +"</option>";
+        }
+    }
+
+    cargaPieza();
+    cargaBanho();
+
+
+   
+   //valor precio inicial de la construccion de la casa
+    var precioInicial = 2500000;
+
+
+    var calcular = document.getElementById('calcular');
+    calcular.addEventListener("click", ()=>{
+        let error = document.getElementById('error');
+        let precioFinal = document.getElementById('precio-final');
+
+        var pieza = document.getElementById('piezas').value;
+        var banho = document.getElementById('banho').value;
+        
+        //validar ingreso
+        if(pieza == 0 || banho == 0){
+            error.innerHTML = "Selecione un campo";
+
+            // setiar el tiempo para que desaparezca el mensaje
+        }else if(pieza>0 & banho>0){
+            let valorPieza = 250000;
+            let valorBanho = 350000;
+            let total = precioInicial+(valorPieza*pieza+valorBanho*banho);
+            precioFinal.innerHTML = total;
+        }
+
+    });
+
+    window.onload = ()=>{
+        let mensajePrecioInicial = document.getElementById('precio-inicial');
+        mensajePrecioInicial.innerHTML += precioInicial;
+    }
+
+   </script>
+
+</body>
+</html>

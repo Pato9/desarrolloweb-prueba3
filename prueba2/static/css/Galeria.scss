@@ -1,0 +1,83 @@
+*{
+    margin : 0;
+    padding : 0;
+}
+
+
+.columns{
+    margin: 15px 25px;
+}
+
+h1{
+    padding: 1rem;
+}
+
+input:nth-of-type(1){
+    width: 250px;
+    border : 1px solid grey;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+input:nth-of-type(2){
+    background: cornflowerblue;
+    border: 1px solid white;
+    padding: 5px 10px;
+    color: white;
+    width: 100px;
+    border-radius: 5px;
+
+    &:hover{
+        background: white;
+        color: cornflowerblue;
+        border: 1px solid cornflowerblue;
+        transition: .5s;
+    }
+}
+
+.lista-platillos{
+    border : 1px solid grey;
+    border-radius: 5px;
+    width: 80%;
+    margin: 0 auto;
+    
+    
+
+    .encabezado{
+        border-bottom: 1px solid grey;
+    }
+    .columns{
+        margin: 10px 25px;
+    }
+
+    .lista-casas{
+        
+        padding: 4em auto;
+        margin: 30px auto;
+        width: 60%;
+    }
+
+    a{
+        display: block;
+    }
+
+}
+
+@media (max-height : 1024px)
+{
+    .lista-platillos{
+        width: 100%;
+        margin: 0;
+        
+        .columns{
+            margin: 15px auto;
+
+        }
+
+     
+    }
+
+    .lista-casas{
+            width: 90%;
+    }
+}
