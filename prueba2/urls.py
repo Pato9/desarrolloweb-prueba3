@@ -25,6 +25,7 @@ from prueba2.views import Contacto
 from prueba2.views import Galeria
 from prueba2.views import ModeloMedida
 from prueba2.views import modeloMetraje
+from gestion.views import listar_casas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,5 +35,6 @@ urlpatterns = [
     path('Contacto/',Contacto),
     path('Modelos/Modelo-medida/',ModeloMedida),
     path('Modelos/Modelo-metraje/', modeloMetraje),
+    path('Casas/Lista/',listar_casas),
     
 ]
