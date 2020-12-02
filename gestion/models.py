@@ -9,3 +9,12 @@ class Casa(models.Model):
     habitaciones = models.IntegerField()
     banhos = models.IntegerField()
     precio = models.FloatField()
+
+
+class Cliente(models.Model):
+    rut = models.CharField(max_length=12)
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    correo = models.CharField(max_length=60)
+    telefono = models.IntegerField()
+    direccion = models.CharField(max_length=100)
