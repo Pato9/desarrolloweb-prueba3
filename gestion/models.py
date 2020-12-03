@@ -12,9 +12,9 @@ class Casa(models.Model):
 
 
 class Cliente(models.Model):
-    rut = models.CharField(max_length=12)
-    nombre = models.CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=100)
     correo = models.CharField(max_length=60)
     telefono = models.IntegerField()
     direccion = models.CharField(max_length=100)
+    red_social = models.CharField(max_length=30)
+    mensaje = models.CharField(max_length=200)

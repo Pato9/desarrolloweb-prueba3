@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from gestion.models import Casa
+from gestion.models import Cliente
 
 # Create your views here.
 
@@ -16,4 +17,17 @@ def listar_casas(request):
 
 #def busqueda_precio(request):
     #TODO: aplicar la busqueda por precios! 
+
+
+def agregar_cliente(request):
+    #tomar los datos
+    nombre = request.GET["nombre"]
+    correo = request.GET["correo"]
+    telefono = request.GET["telefono"]
+    social = request.GET["social"]
+    mensaje = request.GET["mensaje"]
+
+    cli= Cliente(nombre = nombre,correo = correo,telefono=telefono,red_social=social,mensaje = mensaje)
+    cli.save()
+
     
