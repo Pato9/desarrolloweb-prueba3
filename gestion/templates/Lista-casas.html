@@ -8,12 +8,17 @@
 
     <style>
 
-        
+        /*
+        *TODO: se necesita aplicar felx para que los cuadros se
+        *adapten a la pantalla 
+        *
+        */
 
-        .card{
+        .four{
             width: 500px;
             margin : 2em;
             padding: 1em;
+
         }
 
         .card h4{
@@ -23,11 +28,21 @@
         .card p {
             font-weight: bold;
         }
+
+        .lista-casas{
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
     
+
+    <!--Navbar-->
+    {% include 'Navbar.html' %}
+    <!--busqueda de casas por region-->
+    {% include 'busqueda_zona.html' %}
     <!--Listado de casas-->
+
 
     {% if casa %}
     {% for casa in casa %}
@@ -37,11 +52,12 @@
                 <div class="card">
                     <div class="info-card">
                         <h4>{{casa.nombre}}</h4>
-                        <p>Nombre :{{casa.nombre}}</p>
+  
                         <p>m2 : {{casa.m2}}</p>
                         <p>Baños : {{casa.banhos}}</p>
                         <p>Habitaciones :{{casa.habitaciones}}</p>
                         <p>Precio :{{casa.precio}}</p>
+                        <button class="btn btn-primary">Cotizar</button>
                     </div>
                 </div>
             </div>
@@ -49,8 +65,6 @@
     </div>
 
     {% endfor %}
-    <p>hay casas</p>
-
 
     {% else %}
     <!--Mostrar mensaje de que no se encuentras casas-->
