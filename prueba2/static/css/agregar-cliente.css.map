@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAG,CAAC;EACV,OAAO,EAAE,CAAC;CACb;;AAED,AAAA,KAAK,CAAA;EACD,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,QAAQ;EAChB,KAAK,EAAE,GAAG;CACb",
+    "sources": [
+        "agregar-cliente.scss"
+    ],
+    "names": [],
+    "file": "agregar-cliente.css"
+}
