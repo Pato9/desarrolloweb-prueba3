@@ -15,8 +15,10 @@ def listar_casas(request):
     casas = Casa.objects.all()
     return render(request,'Lista-casas.html',{"casa": casas})
 
-#def busqueda_precio(request):
-    #TODO: aplicar la busqueda por precios! 
+def busqueda_precio(request):
+    if request.GET["nombre"]
+
+    
 
 
 def agregar_cliente(request):
