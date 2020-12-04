@@ -24,10 +24,12 @@ def agregar_cliente(request):
     nombre = request.GET["nombre"]
     correo = request.GET["correo"]
     telefono = request.GET["telefono"]
+    direccion = request.GET["direccion"]
     social = request.GET["social"]
     mensaje = request.GET["mensaje"]
 
-    cli= Cliente(nombre = nombre,correo = correo,telefono=telefono,red_social=social,mensaje = mensaje)
-    cli.save()
-
+    cli= Cliente(nombre = nombre,correo = correo,telefono=telefono,direccion=direccion,red_social=social,mensaje = mensaje)
+    if(cli.save() == True):
+        return HttpResponse(request,'gestion/templates/agregar_cliente.html')
+    
     
