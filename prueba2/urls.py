@@ -29,6 +29,8 @@ from gestion.views import listar_casas
 from gestion.views import agregar_cliente
 from gestion.views import busqueda_habitacion
 from gestion.views import busqueda_precio
+from gestion.views import busqueda_precio_menor
+from gestion.views import busqueda_precio_igual
 
 
 urlpatterns = [
@@ -43,5 +45,7 @@ urlpatterns = [
     path('Clientes/agregar/',agregar_cliente),
     path('Casas/listado-habitaciones/',busqueda_habitacion),
     path('Casas/listado-precios/',busqueda_precio),
+    path('Casas/listado-precios-bajos/',busqueda_precio_menor),
+    path('Casas/listado-precios-igual/',busqueda_precio_igual),
     
 ]

@@ -14,13 +14,21 @@ def listar_casas(request):
     #SOLICITAR IMAGENES DE ELLAS.
     casas = Casa.objects.all()
     return render(request,'Lista-casas.html',{"casa": casas})
+    #metodo que busca el precio exacto que se busco
+def busqueda_precio_igual(request):
+    if request.GET["precios"]:
+        precios=request.GET["precios"]
+        casas=Casa.objects.filter(precio=precios)
+        return render(request,"lista_precios_igual.html",{"casa": casas})
 
+    #metodo que busca si el precio es igual o menor
 def busqueda_precio_menor(request):
     if request.GET["precios"]:
         precios=request.GET["precios"]
-        casas=Casa.objects.filter(precio__gte=precios)
-        return render(request,"lista_precios.html",{"casa": casas})
+        casas=Casa.objects.filter(precio__lte=precios)
+        return render(request,"lista_precios_bajo.html",{"casa": casas})
 
+    #metodo que busca si el precio es igual o mayor
 def busqueda_precio(request):
     if request.GET["precios"]:
         precios=request.GET["precios"]
