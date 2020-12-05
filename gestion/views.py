@@ -18,7 +18,7 @@ def listar_casas(request):
 def busqueda_precio_menor(request):
     if request.GET["precios"]:
         precios=request.GET["precios"]
-        casas=Casa.objects.filter(precio__gte=>precios)
+        casas=Casa.objects.filter(precio__gte=precios)
         return render(request,"lista_precios.html",{"casa": casas})
 
 def busqueda_precio(request):
