@@ -51,6 +51,10 @@
             
         }
 
+        .card-busqueda{
+            width: 60%;
+            margin : 1em auto
+        }
 
     </style>
 </head>
@@ -59,30 +63,43 @@
 
     <!--Navbar-->
     {% include 'Navbar.html' %}
-    <!--busqueda de casas por region-->
-    {% include 'busqueda_zona.html' %}
+
     <!--Listado de casas-->
 
-    <form action="/Casas/listado-habitaciones/">
-    <input type="text" name="habitacion">
-    <button type="submit">buscar</button>
-    </form>
-    
-    <form action="/Casas/listado-precios/">
-    <input type="text" name="precios">
-    <button type="submit">buscar</button>
-    </form>
+    <div class="card card-busqueda">
+        <div class="busquedas">
+            <h5 class="card-title">Busquedas</h5>
+            <form action="/Casas/listado-habitaciones/">
+               <div class="form-group">
+                    <label for="">Cantidad de habitaciones </label>
+                    <input type="text" name="habitacion" class="form-control">
+                    
+               </div>
+               <button type="submit" class="btn btn-primary mb-2 ">buscar</button>
+            </form>
+            
+            <form action="/Casas/listado-precios/">
+                <div class="form-group">
+                    <label for="">Se buscara precios mayores al ingresado</label>
+                    <input type="text" name="precios" class="form-control">
+                   
+                </div>
+                <button type="submit" class="btn btn-primary mb-2" >buscar</button>
+            </form>
+        
+            <form action="/Casas/listado-precios-bajos/">
+                <div class="form-group">
+                    <label for="">Se busca precios menores al ingresado</label>
+                    <input type="text" name="precios" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">buscar</button>
 
-    <form action="/Casas/listado-precios-bajos/">
-    <input type="text" name="precios">
-    <button type="submit">buscar</button>
-    </form>
+            </form>
 
-    <form action="/Casas/listado-precios-igual/">
-    <input type="text" name="precios">
-    <button type="submit">buscar</button>
-    </form>
-
+        
+        </div>
+    </div>
+ 
  
     <div class="lista-casas">
         <div class="lista">

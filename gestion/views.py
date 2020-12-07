@@ -57,4 +57,3 @@ def agregar_cliente(request):
         
     return render(request,'agregar_cliente.html')
     
-    

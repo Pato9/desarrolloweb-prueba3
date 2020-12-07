@@ -4,14 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% include 'bootstrapcss.html' %}
+    <style>
+
+    h2{
+        display: block;
+        width: 100%;
+        padding: 1em;
+    }
+
+    .casas{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+    
+
+        
+    }
+
+
+    h4{
+        text-align: center;
+        border-bottom: 0.5px solid rgb(220, 220, 220);
+        padding: .5em;
+    }
+    .card{
+        margin: 1em;
+        padding : 1em;
+    }
+
+    .cotizar{
+        display: block;
+        background: white;
+        width: 60%;
+        color: blue;
+        margin: .5em auto;
+        border : 1px solid blue;
+        border-radius: 5px;
+        padding: 7px 20px;
+    }
+
+    .cotizar:hover{
+        background: blue;
+        transition:.5s ;
+        color :white;
+        
+    }
+</style>
 </head>
 <body>
-    <h1>precio encontrado</h1>
-    {% if casa %}
-    <p>se encotraron casas</p>
-    {% else %}
-    <p>no se encontraron</p>
-    {% endif %}
+    {% include 'Navbar.html' %}
 
+    <h2>Las casa con el precio igual o mayor al ingresado son :</h2>
+
+    <div class="lista">
+        <div class="casas">
+            {% if casa %}
+            {% for casa in casa %}
+            <div class="card">
+                <div class="info-card">
+                    <h4>{{casa.nombre}}</h4>
+
+                    <p>m2 : {{casa.m2}}</p>
+                    <p>Baños : {{casa.banhos}}</p>
+                    <p>Habitaciones :{{casa.habitaciones}}</p>
+                    <p>Precio :{{casa.precio}}</p>
+                    <button class="cotizar">Cotizar</button>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>no se encontraron</p>
+            {% endif %}
+        </div>
+    </div>
+{% include 'bootstrapjs.html' %}
 </body>
 </html>
