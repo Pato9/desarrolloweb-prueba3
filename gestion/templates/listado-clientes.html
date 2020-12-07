@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado clientes</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        *{
+            margin:0;
+            padding:0;
+            font-family: 'Montserrat', sans-serif;            
+        }
+
+        table{
+            width: 90%;
+            margin: 100px auto;
+            border: 1px solid grey;
+        }
+
+        th{
+            background: #583d72;
+            color: white;
+            padding: 20px;
+        }
+        td{
+            padding: 20px;
+        }
+        table tr:nth-child(odd) {background-color: #ffba93;}
+
+        table tr:nth-child(even) {background-color: white;}
+
+        h1{
+            text-align: center;
+            margin :1em auto;
+            font-size: 40px;
+        }
+    
+    </style>
+</head>
+<body>
+    
+
+    <h1>Listado de clientes </h1>
+
+    <div class="container">
+        {% if clientes %}
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>Nombre</th> 
+                    <th>Correo</th>
+                    <th>telefono</th>
+                    <th>Direccion</th>
+                    <th>Res social</th>
+                    <th>Mensaje</th>
+                </tr>              
+                {% for cli in clientes %}
+                <tr>
+                    <td>{{cli.nombre}}</td>
+                    <td>{{cli.correo}}</td>
+                    <td>{{cli.telefono}}</td>
+                    <td>{{cli.direccion}}</td>
+                    <td>{{cli.red_social}}</td>
+                    <td>{{cli.mensaje}}</td>
+                </tr>
+                   {% endfor %}
+            </tbody>
+        </table>
+
+
+        {% else %}
+
+        <p>no hay clientes</p>
+
+        {% endif %}
+    </div>
+</body>
+</html>

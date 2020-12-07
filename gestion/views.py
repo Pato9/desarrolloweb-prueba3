@@ -57,3 +57,6 @@ def agregar_cliente(request):
         
     return render(request,'agregar_cliente.html')
     
+def lista_clientes(request):
+    clientes = Cliente.objects.all()
+    return render(request,'listado-clientes.html',{"clientes" : clientes})
