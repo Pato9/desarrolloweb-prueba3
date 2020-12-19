@@ -1,5 +1,7 @@
 Pagina de compra de casas prefabricadas.
 
+Para el almacenamiento de datos de esta pagina se uso SQLite.
+
 1)Para ingresar a la pagina inicial se debe entrar a la 
 siguiente URL : http://127.0.0.1:8000/Inicio/ , uno va poder
 navegar dentro de las distintas opciones del nav,
