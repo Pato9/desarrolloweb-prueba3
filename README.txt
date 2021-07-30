@@ -2,6 +2,11 @@ Pagina de compra de casas prefabricadas.
 
 Para el almacenamiento de datos de esta pagina se uso SQLite.
 
+*Recordar que este proyecto fue creando con django por lo cual se debe generar 
+el entorno virtual y instalar django en aquel entorno, luego continuar con los pasos
+descritos
+*
+
 1)Para ingresar a la pagina inicial se debe entrar a la 
 siguiente URL : http://127.0.0.1:8000/Inicio/ , uno va poder
 navegar dentro de las distintas opciones del nav,
